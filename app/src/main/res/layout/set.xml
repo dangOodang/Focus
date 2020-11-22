@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="50dp"
+        android:layout_height="59dp"
+        android:background="@drawable/back"
+        android:textSize="40sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:background="#6077f0"
+        android:gravity="center"
+        android:text="设置"
+        android:textSize="40sp"
+         />
+
+    <TextView
+        android:id="@+id/tv_2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/tv_1"
+        android:layout_marginTop="-1dp"
+        android:background="@drawable/style2"
+        android:paddingLeft="25dp"
+        android:text="昵称                                    >"
+        android:textSize="30sp" />
+    <TextView
+        android:id="@+id/tv_3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/tv_2"
+        android:background="@drawable/style2"
+        android:text="头像                                    >"
+        android:paddingLeft="25dp"
+        android:textSize="30sp"
+        />
+    <TextView
+        android:id="@+id/tv_4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/tv_3"
+        android:background="@drawable/style2"
+        android:text="修改密码                            >"
+        android:paddingLeft="25dp"
+        android:textSize="30sp"
+        />
+    <TextView
+        android:id="@+id/tv_5"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/tv_4"
+        android:background="@drawable/style2"
+        android:text="版本号                                >"
+        android:paddingLeft="25dp"
+        android:textSize="30sp"
+        />
+
+
+
+
+</RelativeLayout>

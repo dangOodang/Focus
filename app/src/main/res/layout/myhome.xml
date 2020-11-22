@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/button_set"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setting"
+        android:layout_alignParentRight="true"/>
+    <RelativeLayout
+        android:id="@+id/up_2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/button_set">
+        <TextView
+            android:id="@+id/up_21"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/picture"
+
+            android:layout_margin="10dp"/>
+        <TextView
+            android:id="@+id/up_22"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/up_21"
+            android:text="hi, 我"
+            android:textSize="50sp"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+           />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/money"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/up_2"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="0元"
+            android:layout_marginLeft="100dp"
+            android:textSize="30sp"
+            android:drawableLeft="@drawable/money"
+            android:drawablePadding="10dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/up_3"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/money">
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/up_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/up_3"
+        android:gravity="center">
+        <Button
+            android:id="@+id/up_B"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="修改密码"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textSize="30sp"
+            android:background="#f0b160"
+            />
+
+    </RelativeLayout>
+</RelativeLayout>
