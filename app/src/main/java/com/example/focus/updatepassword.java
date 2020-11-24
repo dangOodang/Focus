@@ -19,7 +19,7 @@ public class updatepassword extends AppCompatActivity {
         mBUtton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(updatepassword.this,set.class);
+                Intent intent=new Intent(updatepassword.this,myhome.class);
                 startActivity(intent);
             }
         });
@@ -27,7 +27,7 @@ public class updatepassword extends AppCompatActivity {
         mBUtton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(updatepassword.this,set.class);
+                Intent intent=new Intent(updatepassword.this,myhome.class);
                 startActivity(intent);
             }
         });

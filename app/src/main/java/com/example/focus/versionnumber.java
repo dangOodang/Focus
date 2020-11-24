@@ -19,7 +19,7 @@ public class versionnumber extends AppCompatActivity {
         mBUtton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(versionnumber.this,set.class);
+                Intent intent=new Intent(versionnumber.this,myhome.class);
                 startActivity(intent);
             }
         });
