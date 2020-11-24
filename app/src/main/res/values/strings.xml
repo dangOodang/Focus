@@ -14,4 +14,5 @@
     <string name="ok">确认</string>
     <string name="continuetime">本次计时持续%1$d分钟</string>
     <string name="timeend">计时结束！</string>
+    <string name="fffffff">fffffff</string>
 </resources>

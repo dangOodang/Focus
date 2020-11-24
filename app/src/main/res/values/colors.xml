@@ -170,4 +170,11 @@
     <color name="green_pressed">#30A070</color>
     <color name="purple_normal">#9932CC</color>
     <color name="purple_pressed">#9F79EE</color>
+
+ >
+    <color name="content_color">#000000</color>
+    <color name="white_normal">#ffffffff</color>
+    <color name="login_button_background">#71c297</color>
+    <color name="deep_green">#99C1AC</color>
+
 </resources>

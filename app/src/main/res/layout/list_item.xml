@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/what_text"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:text="@string/fffffff"
+            tools:ignore="MissingConstraints"
+            android:textSize="35sp"/>
+        <Button
+            android:id = "@+id/del_btn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="删除"
+            android:focusable="false"
+            android:textSize="30sp"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>
