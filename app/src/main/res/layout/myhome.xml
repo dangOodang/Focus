@@ -1,62 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <Button
-        android:id="@+id/button_set"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/setting"
-        android:layout_alignParentRight="true"/>
-
-        <ImageView
-            android:id="@+id/up_picture"
-            android:src="@drawable/picture"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_below="@id/button_set"
-            android:scaleType="fitCenter"/>
-        <TextView
-            android:id="@+id/up_22"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_toRightOf="@id/up_picture"
-            android:layout_below="@id/button_set"
-            android:text="hi, 我"
-            android:textSize="50sp"
-            android:paddingLeft="20dp"
-            android:paddingTop="20dp"
-           />
-        <TextView
-            android:id="@+id/tv_money"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/up_picture"
-            android:text="0元"
-            android:layout_marginLeft="100dp"
-            android:textSize="30sp"
-            android:drawableLeft="@drawable/money"
-            android:drawablePadding="10dp"/>
-
-    <RelativeLayout
-        android:id="@+id/up_3"
+    android:layout_height="match_parent"
+    android:background="#ededed"
+    >
+    <TextView
+    android:id="@+id/tv_set"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@drawable/style2"
+    />
+    <ImageView
+        android:id="@+id/im_pen"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_below="@id/tv_money">
-    </RelativeLayout>
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pen"
+        android:background="@drawable/style1"
+        android:contentDescription="@string/image_out" />
+    <ImageView
+            android:id="@+id/up_picture"
+            android:src="@drawable/pokemon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/tv_set"
+            android:scaleType="fitCenter"
+            android:layout_marginStart="20dp"
+            android:contentDescription="@string/image_out"
+        />
 
-        <Button
-            android:id="@+id/up_B"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="修改密码"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:textSize="30sp"
-            android:background="#f0b160"
-            android:layout_below="@id/up_3"
-            android:layout_centerHorizontal="true"
-            />
+    <TextView
+        android:id="@+id/up_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/myname"
+        android:layout_below="@id/tv_set"
+        android:textColor="#000000"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style2"
+        android:paddingLeft="25dp"
+        android:paddingRight="1dp"
+        android:text="@string/username"
+        android:textSize="25sp"
+        android:layout_below="@id/im_pen"
+        android:layout_marginTop="1dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="1dp" />
+
+
+    <TextView
+        android:id="@+id/tv_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_1"
+        android:background="@drawable/style2"
+        android:text="@string/update_password"
+        android:paddingLeft="25dp"
+        android:paddingRight="1dp"
+        android:textSize="25sp"
+        android:layout_marginTop="7dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="1dp" />
+    <TextView
+        android:id="@+id/tv_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_2"
+        android:background="@drawable/style2"
+        android:text="@string/version_number"
+        android:paddingLeft="25dp"
+        android:paddingRight="1dp"
+        android:textSize="25sp"
+        android:layout_marginTop="7dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="1dp" />
+    <TextView
+       android:id="@+id/but_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="@string/out_login"
+        android:textSize="25sp"
+        android:background="@drawable/style2"
+        android:gravity="center"
+        android:layout_below="@id/tv_3"
+        android:layout_centerHorizontal="true"
+        />
 
 
 </RelativeLayout>

@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
     <Button
         android:id="@+id/bbbtn"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
-        android:background="@drawable/back"/>
+        android:layout_width="50dp"
+        android:layout_height="59dp"
+        android:background="@drawable/back"
+        android:textSize="40sp"
+        />
     <TextView
         android:id="@+id/ttv"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="昵称"
+        android:text="@string/username"
         android:textSize="30sp"
         android:gravity="center"
-        android:background="#93b5cf"/>
+        android:background="#6077f0"/>
 
     <EditText
         android:id="@+id/et_1"
@@ -24,11 +27,16 @@
         android:layout_marginTop="10dp"
         android:textSize="16sp"
         android:textColor="#FFAD33"
-        android:hint="请输入新昵称"
+        android:hint="@string/please_input_newusername"
         android:background="@drawable/style2"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:paddingLeft="10dp"
         android:layout_below="@id/ttv"
-        />
+        android:paddingStart="10dp"
+        tools:ignore="RtlSymmetry"
+        android:autofillHints="no"
+        android:inputType="text" />
     <TextView
         android:id="@+id/ttv_1"
         android:layout_width="match_parent"
@@ -41,9 +49,10 @@
         android:layout_height="50dp"
         android:layout_below="@id/ttv_1"
         android:layout_marginTop="1dp"
-        android:text="确定"
+        android:onClick="sendMessage"
+        android:text="@string/ok"
         android:layout_marginLeft="175dp"
-        />
+        android:layout_marginStart="175dp" />
 
 
 </RelativeLayout>

@@ -14,5 +14,16 @@
     <string name="ok">确认</string>
     <string name="continuetime">本次计时持续%1$d分钟</string>
     <string name="timeend">计时结束！</string>
-    <string name="fffffff">fffffff</string>
+    <string name="myname">我的名字</string>
+    <string name="username">用户名</string>
+    <string name="update_password">修改密码</string>
+    <string name="version_number">版本号</string>
+    <string name="version_number_1">1.0.0.0.0.1</string>
+    <string name="out_login">退出登入</string>
+    <string name="image_out"></string>
+    <string name="please_input_newusername">请输入新昵称</string>
+    <string name="please_input_nowpassword">请输入现密码</string>
+    <string name="please_input_newpassword">请输入新密码</string>
+    <string name="please_input_newpassword_again">再次输入现密码</string>
+    <string name="ok_update">确认修改</string>
 </resources>
