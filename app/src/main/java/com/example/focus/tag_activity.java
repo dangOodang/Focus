@@ -80,7 +80,7 @@ public class tag_activity extends Activity {
                     list = list_study ;
                     break;
                 case 3:
-                    tvValue = (TextView) findViewById(R.id.tv_value3);
+                    tvValue = ( TextView) findViewById(R.id.tv_value3);
                     list = list_sport ;
                     break;
                 case 4:
