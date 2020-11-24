@@ -20,9 +20,10 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:singleLine="true"
-            android:text="@string/fffffff"
+
             tools:ignore="MissingConstraints"
             android:textSize="35sp"/>
+        //android:text="@string/fffffff"
         <Button
             android:id = "@+id/del_btn"
             android:layout_width="100dp"
