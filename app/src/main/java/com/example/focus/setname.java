@@ -10,21 +10,15 @@ import android.widget.EditText;
 
 public class setname extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.focus.MESSAGE";
-
-    private Button mBtnre;
-    private Button mBtnsure ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setname);
-        mBtnre = findViewById(R.id.bbbtn);
-        mBtnre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent;
-                intent = new Intent(setname.this, myhome.class);
-                startActivity(intent);
-            }
+        Button mBtnre = findViewById(R.id.bbbtn);
+        mBtnre.setOnClickListener(v -> {
+            Intent intent;
+            intent = new Intent(setname.this, myhome.class);
+            startActivity(intent);
         });
 
     }
