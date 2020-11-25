@@ -17,16 +17,16 @@
         <TextView
             android:id="@+id/what_text"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:ems="10"
             android:singleLine="true"
-            android:text="@string/fffffff"
+            android:text="fffffff"
             tools:ignore="MissingConstraints"
             android:textSize="35sp"/>
         <Button
             android:id = "@+id/del_btn"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:text="删除"
             android:focusable="false"
             android:textSize="30sp"
