@@ -36,7 +36,7 @@ public class SubThread_T1 implements Runnable{
         StringBuffer buffer = new StringBuffer();
 
         try {
-            URL url = new URL("https://cloud.bmob.cn/129c9e5ac930fbc2/restNamejs?name="+username+"&objectId="+"e32114d8c9"+"&token="+"38ffea08406d76468060234b64f31ef8");
+            URL url = new URL("https://cloud.bmob.cn/129c9e5ac930fbc2/restNamejs?name="+username+"&objectId="+myhome.text11+"&token="+myhome.text111);
             HttpURLConnection urlCon = (HttpURLConnection) url.openConnection();
 
             int response = urlCon.getResponseCode();
@@ -60,17 +60,19 @@ public class SubThread_T1 implements Runnable{
                 String text=object.get("msg").getAsString();
 
                 myhome.name11=object.get("name").getAsString();
-                if(text.equals("success")){
-                    Handler handler = new Handler(Looper.getMainLooper());
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(),"修改成功",Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }else{
-                    Toast.makeText(getApplicationContext(), "修改失败",Toast.LENGTH_SHORT).show();
-                };
+
+
+//                if(text.equals("success")){
+//                    Handler handler = new Handler(Looper.getMainLooper());
+//                    handler.post(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            Toast.makeText(getApplicationContext(),"修改成功",Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//                }else{
+//                    Toast.makeText(getApplicationContext(), "修改失败",Toast.LENGTH_SHORT).show();
+//                };
             } else {
                 throw new Exception("连接失败");
             }

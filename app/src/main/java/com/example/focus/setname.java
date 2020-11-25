@@ -31,9 +31,9 @@ public class setname extends AppCompatActivity {
             public void onClick(View v) {
                 EditText editText = findViewById(R.id.et_1);
                 new Thread(new SubThread_T1(editText.getText().toString())).start();//跳转到SubThread_TT子进程
-                Intent intent;
-                intent = new Intent(setname.this, myhome.class);
-                startActivity(intent);
+//                Intent intent;
+//                intent = new Intent(setname.this, myhome.class);
+//                startActivity(intent);
             }
         });
     }
