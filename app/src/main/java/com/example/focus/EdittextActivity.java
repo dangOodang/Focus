@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class EdittextActivity extends AppCompatActivity {
 
-    private Button mBtnLogin,mBtnZHUce,mBtnFORget;
+    private Button mBtnLogin,mBtnZHUce,mBtnFORget,mBtnyanzheng;
     private EditText email2,password2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,5 +44,13 @@ public class EdittextActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+//        mBtnyanzheng = findViewById(R.id.btn_yz);//邮箱验证，按完跳转到邮箱验证
+//        mBtnyanzheng.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(EdittextActivity.this,YOUXIANGYANZHENG.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 }

@@ -30,7 +30,7 @@ public class SubThread_FF implements Runnable{
         JsonObject object = null;
         StringBuffer buffer = new StringBuffer();
         try {
-            URL url = new URL("https://pycloud.bmob.cn/129c9e5ac930fbc2/reserPassword?email="+email);
+            URL url = new URL("https://pycloud.bmob.cn/129c9e5ac930fbc2/restPassword?email="+email);
             HttpURLConnection urlCon = (HttpURLConnection) url.openConnection();
 
             int response = urlCon.getResponseCode();

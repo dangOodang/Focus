@@ -71,9 +71,20 @@ public class SubThread_HH implements Runnable{
 
                         }
                     });
-                }else{
-                         Toast.makeText(getApplicationContext(), MSGobj.get("msg").getAsString(),Toast.LENGTH_SHORT).show();
-                };
+                }
+                if(!text.equals("success")){
+                    Handler handler = new Handler(Looper.getMainLooper());
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(),"邮箱注册失败",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+//                else{
+//                         Toast.makeText(getApplicationContext(), "邮箱或密码错误",Toast.LENGTH_SHORT).show();
+//                };
+//                MSGobj.get("msg").getAsString()
             } else {
                 throw new Exception("连接失败");
             }
