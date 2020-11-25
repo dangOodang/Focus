@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/backguand_gray">
+
+
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:divider="@color/black"
+        android:dividerHeight="1dp"
+        android:background="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/text_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="请先选择要进行的项目!"
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="90dp">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/qd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确定"
+            android:textSize="30sp"
+            android:layout_marginTop="200dp"
+            android:layout_centerHorizontal="true"
+            android:divider="@color/black"
+            android:dividerHeight="1dp"
+            android:background="@color/red"></Button>
+    </RelativeLayout>
+</RelativeLayout>

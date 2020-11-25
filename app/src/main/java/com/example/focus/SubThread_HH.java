@@ -57,6 +57,8 @@ public class SubThread_HH implements Runnable{
                 myhome.text11 =  object.get("objectId").getAsString();//保存下来的objectId值
                 myhome.text111 = object.get("sessionToken").getAsString();//保存下来的sessionToken值
 
+                myhome.textbp = object.get("name").getAsString();//保存昵称
+
                 String text=object.get("msg").getAsString();
                 String text2="success";
                 if(text.equals("success")){
@@ -72,9 +74,20 @@ public class SubThread_HH implements Runnable{
 
                         }
                     });
-                }else{
-                         Toast.makeText(getApplicationContext(), MSGobj.get("msg").getAsString(),Toast.LENGTH_SHORT).show();
-                };
+                }
+                if(!text.equals("success")){
+                    Handler handler = new Handler(Looper.getMainLooper());
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(),"邮箱注册失败",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+//                else{
+//                         Toast.makeText(getApplicationContext(), "邮箱或密码错误",Toast.LENGTH_SHORT).show();
+//                };
+//                MSGobj.get("msg").getAsString()
             } else {
                 throw new Exception("连接失败");
             }

@@ -1,6 +1,5 @@
 package com.example.focus;
 
-
 /* 自定义PopupWindow  主要用来显示ListView
  * @author Ansen
  * @param <T>
@@ -11,7 +10,6 @@ package com.example.focus;
 import android.app.ActionBar;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,9 +19,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
+
 
 public class SpinerPopWindow<T> extends PopupWindow {
     private LayoutInflater inflater;
@@ -33,14 +31,13 @@ public class SpinerPopWindow<T> extends PopupWindow {
     private int index = 0;
 
 
-
     public SpinerPopWindow(Context context, List<T> list, AdapterView.OnItemClickListener clickListener) {
         super(context);
         inflater=LayoutInflater.from(context);
         this.list=list;
         init(clickListener);
-    }
 
+    }
 
 
     private void init(AdapterView.OnItemClickListener clickListener){
@@ -96,7 +93,6 @@ public class SpinerPopWindow<T> extends PopupWindow {
                         tag_activity.delete(position, list);
                         dismiss();
                     }
-
                 });
             }
             //holder.tv2.setText(getItem(position).toString());

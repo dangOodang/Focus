@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ZHUCEActivity extends AppCompatActivity {
     private Button mBtnzc;
-    private EditText email1,password1;
+    private EditText email1,password1,user1;
     private String em,pa;
 //    private Object ZHUCEActivity;
 
@@ -26,6 +26,7 @@ public class ZHUCEActivity extends AppCompatActivity {
             public void onClick(View v) {
                 email1=(EditText) findViewById(R.id.et_5);
                 password1=(EditText) findViewById(R.id.et_4);
+                user1=(EditText) findViewById(R.id.et_3);
 //                AsyncCustomEndpoints ace = new AsyncCustomEndpoints();
 //
 //                JSONObject params = new JSONObject();
@@ -37,7 +38,7 @@ public class ZHUCEActivity extends AppCompatActivity {
 //                    e.printStackTrace();
 //                }
 
-                new Thread(new SubThread_TT(email1.getText().toString(),password1.getText().toString())).start();//跳转到SubThread_TT子进程
+                new Thread(new SubThread_TT(email1.getText().toString(),password1.getText().toString(),user1.getText().toString())).start();//跳转到SubThread_TT子进程
             }
         });
     }
