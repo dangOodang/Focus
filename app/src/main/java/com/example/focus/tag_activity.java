@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -24,8 +25,7 @@ import java.util.List;
  * @author ansen
  */
 public class tag_activity extends Activity {
-    public static int flag = 0;
-    //private static int flag;//是否删除
+    public static int flag = 0;//是否删除
     private List<SpinerPopWindow<String>> mSpinerPopWindow;
     private List<String> list_work;
     private List<String> list_study;
@@ -33,34 +33,34 @@ public class tag_activity extends Activity {
     private List<String> list_other;
     private List<String> list = new ArrayList<String>();
     private TextView tvValue;
+    private String fuck = null;
 
-
+    private Button bt_ok;
+    private Button bt_totable;
     int j;
     int place;
-
-    //   private Button button = findViewById(R.id.btn);
-    //   private EditText edtext =findViewById(R.id.edit_text);
     PopupWindow popupWindow;
-
+    public static PopupWindow del_Window;
     public static <T> void delete(int index,List<T> list1) {
-
         list1.remove(index);
-        flag = 1;
     }
-
-
-
+    PopupWindow tipWindow;
 
 
     private  void init_popw(View v1){
-        popupWindow=new PopupWindow( v1, ActionBar.LayoutParams.WRAP_CONTENT,ActionBar.LayoutParams.WRAP_CONTENT);
+        popupWindow=new PopupWindow( v1, ActionBar.LayoutParams.MATCH_PARENT,ActionBar.LayoutParams.MATCH_PARENT);
         popupWindow.setFocusable(true);
         ColorDrawable dw = new ColorDrawable(0x00);
         popupWindow.setBackgroundDrawable(dw);
         popupWindow.setOutsideTouchable(true);
     }
-
-
+    private  void init_tip(View v1){
+        tipWindow=new PopupWindow( v1, ActionBar.LayoutParams.MATCH_PARENT,ActionBar.LayoutParams.MATCH_PARENT);
+        tipWindow.setFocusable(true);
+        ColorDrawable dw = new ColorDrawable(0x00);
+        tipWindow.setBackgroundDrawable(dw);
+        tipWindow.setOutsideTouchable(true);
+    }
 
 
     @Override
@@ -69,6 +69,38 @@ public class tag_activity extends Activity {
         setContentView(R.layout.activity_spiner);
         initData_list();
         initSpiner();
+        fuck = null;
+        bt_ok = findViewById(R.id.bt_ok);
+        bt_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (fuck !=  null) {
+                    Toast.makeText(tag_activity.this, fuck, Toast.LENGTH_SHORT).show();
+                    //进入另一个页面 参数：palce，fuck；
+                }
+                else{
+
+                    LayoutInflater inflater = LayoutInflater.from(tag_activity.this);
+                    View vtip = inflater.inflate(R.layout.tip_window, null);//引用自定义布局
+                    init_tip(vtip);
+                    tipWindow.showAtLocation(inflater.inflate(R.layout.activity_spiner, null), Gravity.CENTER,0,0 );
+                    vtip.findViewById(R.id.qd).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            tipWindow.dismiss();
+                        }
+                    });
+                }
+            }
+        });
+        bt_totable = findViewById(R.id.bt_to_table );
+        bt_totable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //进入查询时间的页面
+            }
+        });
+
         for(j=0;j<4;j++) {
             switch (j + 1) {
                 case 1:
@@ -80,7 +112,7 @@ public class tag_activity extends Activity {
                     list = list_study ;
                     break;
                 case 3:
-                    tvValue = ( TextView) findViewById(R.id.tv_value3);
+                    tvValue = (TextView) findViewById(R.id.tv_value3);
                     list = list_sport ;
                     break;
                 case 4:
@@ -88,7 +120,6 @@ public class tag_activity extends Activity {
                     list = list_other ;
                     break;
             }
-
             tvValue.setOnClickListener(clickListener);//显示下拉框
             mSpinerPopWindow.get(place).setOnDismissListener(dismissListener);
             setTextImage(R.drawable.up);
@@ -133,7 +164,7 @@ public class tag_activity extends Activity {
                 View myview = inflater.inflate(R.layout.new_window, null);//引用自定义布局
                 init_popw(myview);
                 popupWindow.showAtLocation(inflater.inflate(R.layout.activity_spiner, null), Gravity.CENTER,0,200 );
-                myview.findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {//获取布局里面按钮
+                myview.findViewById(R.id.add_btn).setOnClickListener(new View.OnClickListener() {//获取布局里面按钮
                     @Override
                     public void onClick(View v) {
                         EditText editText = myview.findViewById(R.id.edit_text);
@@ -166,29 +197,21 @@ public class tag_activity extends Activity {
                                     setTextImage(R.drawable.up);
                                     break;
                             }
-                            mSpinerPopWindow.get(place).setWidth(tvValue.getWidth());
-                            mSpinerPopWindow.get(place).showAsDropDown(tvValue);
-                            tvValue.setText(list.get(position));
+                            Toast.makeText(tag_activity.this, "生成了:" + list.get(position),Toast.LENGTH_LONG).show();
                         }
+                    }
+                });//如果添加了
+                myview.findViewById(R.id.ccl_btn).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popupWindow.dismiss();
                     }
                 });
             }
-
-              /* meditwindow.button.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        String string = meditwindow.editText.getText().toString();
-                        list.add(string);
-                    }
-                });
-
-              //  String st = edtext.getText().toString();
-               // list.add(st);
-*/
             else {
                 tvValue.setText(list.get(position));
                 Toast.makeText(tag_activity.this, "点击了:" + list.get(position),Toast.LENGTH_LONG).show();
+                fuck = list.get(position).toString();
                 mSpinerPopWindow.get(place).dismiss();
             }
         }

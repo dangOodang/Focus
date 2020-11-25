@@ -176,5 +176,6 @@
     <color name="white_normal">#ffffffff</color>
     <color name="login_button_background">#71c297</color>
     <color name="deep_green">#99C1AC</color>
-
+    <color name="backguand_gray">#AABDBD</color>
+    <color name="blue_button">#0B2FF8</color>
 </resources>
