@@ -84,6 +84,17 @@
         android:layout_marginTop="7dp"
         android:paddingStart="25dp"
         android:paddingEnd="1dp" />
+
+    <Button
+        android:id="@+id/btn_login22"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/tv_3"
+        android:layout_marginTop="40dp"
+        android:text="登录"
+        android:textColor="#Fff"
+        android:textSize="20sp"/>
+
     <TextView
        android:id="@+id/but_out"
         android:layout_width="match_parent"
