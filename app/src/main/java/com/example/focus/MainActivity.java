@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Bmob.initialize(this, "aee93d95922e83de7d799cd06ad844ad");
+        //        Bmob.initialize(this, "aee93d95922e83de7d799cd06ad844ad");
 //        mBtnTextview = findViewById(R.id.btn_textview);
 //        mBtnTextview.setOnClickListener(new View.OnClickListener() {
 //            @Override

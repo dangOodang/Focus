@@ -2,6 +2,7 @@ package com.example.focus;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.gson.JsonObject;
@@ -15,15 +16,17 @@ import java.net.URL;
 
 import static cn.bmob.v3.Bmob.getApplicationContext;
 
-public class SubThread_HH implements Runnable{
-    private  final String TAG = getClass().getSimpleName();
-    private String email;
-    private String password;
 
-    SubThread_HH(String email, String password){
-        this.email = email;
-        this.password = password;
+
+public class SubThread_T1 implements Runnable{
+    private  final String TAG = getClass().getSimpleName();
+    private String username;
+    private EditText email1,password1;
+
+    SubThread_T1(String email){
+        this.username = email;
     }
+
 
     @Override
     public void run(){
@@ -31,8 +34,9 @@ public class SubThread_HH implements Runnable{
         String res = "";
         JsonObject object = null;
         StringBuffer buffer = new StringBuffer();
+
         try {
-            URL url = new URL("https://pycloud.bmob.cn/129c9e5ac930fbc2/loginByEmail?password="+password+"&email="+email);
+            URL url = new URL("https://cloud.bmob.cn/129c9e5ac930fbc2/restNamejs?name="+username+"&objectId="+"e32114d8c9"+"&token="+"38ffea08406d76468060234b64f31ef8");
             HttpURLConnection urlCon = (HttpURLConnection) url.openConnection();
 
             int response = urlCon.getResponseCode();
@@ -53,27 +57,19 @@ public class SubThread_HH implements Runnable{
                 JsonParser parse = new JsonParser();
                 object = (JsonObject) parse.parse(res);//服务器返回的字典
                 final JsonObject MSGobj = object;
-
-                myhome.text11 =  object.get("objectId").getAsString();//保存下来的objectId值
-                myhome.text111 = object.get("sessionToken").getAsString();//保存下来的sessionToken值
-
                 String text=object.get("msg").getAsString();
-                String text2="success";
+
+                myhome.name11=object.get("name").getAsString();
                 if(text.equals("success")){
                     Handler handler = new Handler(Looper.getMainLooper());
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(getApplicationContext(),"欢迎来到宠物世界",Toast.LENGTH_SHORT).show();
-
-
-                            //登陆成功跳转页面
-
-
+                            Toast.makeText(getApplicationContext(),"修改成功",Toast.LENGTH_SHORT).show();
                         }
                     });
                 }else{
-                         Toast.makeText(getApplicationContext(), MSGobj.get("msg").getAsString(),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "修改失败",Toast.LENGTH_SHORT).show();
                 };
             } else {
                 throw new Exception("连接失败");
@@ -83,7 +79,4 @@ public class SubThread_HH implements Runnable{
         }
 
     }
-//    public class User{
-//        @SerializedName("session")
-//    }
 }

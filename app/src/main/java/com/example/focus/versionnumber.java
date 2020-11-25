@@ -15,12 +15,9 @@ public class versionnumber extends AppCompatActivity {
         setContentView(R.layout.versionnumber);
 
         Button mBUtton = findViewById(R.id.but_1);
-        mBUtton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(versionnumber.this,myhome.class);
-                startActivity(intent);
-            }
+        mBUtton.setOnClickListener(v -> {
+            Intent intent=new Intent(versionnumber.this,myhome.class);
+            startActivity(intent);
         });
 
     }

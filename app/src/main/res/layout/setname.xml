@@ -7,14 +7,14 @@
     <Button
         android:id="@+id/bbbtn"
         android:layout_width="50dp"
-        android:layout_height="59dp"
+        android:layout_height="39dp"
         android:background="@drawable/back"
         android:textSize="40sp"
         />
     <TextView
         android:id="@+id/ttv"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:text="@string/username"
         android:textSize="30sp"
         android:gravity="center"
@@ -22,15 +22,14 @@
 
     <EditText
         android:id="@+id/et_1"
-        android:layout_width="match_parent"
+       android:layout_width="match_parent"
+
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:textSize="16sp"
         android:textColor="#FFAD33"
         android:hint="@string/please_input_newusername"
         android:background="@drawable/style2"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:paddingLeft="10dp"
         android:layout_below="@id/ttv"
         android:paddingStart="10dp"
@@ -45,14 +44,17 @@
 
     <Button
         android:id="@+id/bbtn"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/ttv_1"
-        android:layout_marginTop="1dp"
         android:onClick="sendMessage"
         android:text="@string/ok"
-        android:layout_marginLeft="175dp"
-        android:layout_marginStart="175dp" />
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textSize="25sp"
+        android:background="#f0b160"
+         />
 
 
 </RelativeLayout>

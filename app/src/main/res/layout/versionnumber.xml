@@ -5,7 +5,7 @@
     <Button
         android:id="@+id/but_1"
         android:layout_width="50dp"
-        android:layout_height="59dp"
+        android:layout_height="39dp"
         android:background="@drawable/back"
         />
     <RelativeLayout
@@ -16,9 +16,9 @@
         android:background="#6077f0">
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="60dp"
+            android:layout_height="40dp"
             android:text="@string/version_number"
-            android:textSize="40sp"
+            android:textSize="30sp"
             />
     </RelativeLayout>
     <RelativeLayout
@@ -31,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/version_number_1"
-            android:textSize="30sp"/>
+            android:textSize="30sp"
+            android:gravity="center"/>
     </RelativeLayout>
 </RelativeLayout>

@@ -23,9 +23,8 @@ public class EdittextActivity extends AppCompatActivity {
             public void onClick(View v) {
                 email2=(EditText) findViewById(R.id.et_1);
                 password2=(EditText) findViewById(R.id.et_2);
-
-
                 new Thread(new SubThread_HH(email2.getText().toString(),password2.getText().toString())).start();//跳转到登录SubThread_HH子进程
+                
             }
         });
         mBtnZHUce = findViewById(R.id.btn_zhuce);//注册按钮，按完跳转到注册界面

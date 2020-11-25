@@ -8,12 +8,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.net.URL;
+
 public class setname extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.focus.MESSAGE";
+    private Button mBtbbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setname);
+
         Button mBtnre = findViewById(R.id.bbbtn);
         mBtnre.setOnClickListener(v -> {
             Intent intent;
@@ -21,13 +25,19 @@ public class setname extends AppCompatActivity {
             startActivity(intent);
         });
 
+        mBtbbtn=findViewById(R.id.bbtn);
+        mBtbbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText editText = findViewById(R.id.et_1);
+                new Thread(new SubThread_T1(editText.getText().toString())).start();//跳转到SubThread_TT子进程
+                Intent intent;
+                intent = new Intent(setname.this, myhome.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    public void sendMessage(View view){
-        Intent intent = new Intent(setname.this,myhome.class);
-        EditText editText = findViewById(R.id.et_1);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE,message);
-        startActivity(intent);
-    }
+
+
 }

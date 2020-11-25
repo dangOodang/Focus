@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ededed"
+    android:background="@drawable/backgroud"
     >
     <TextView
     android:id="@+id/tv_set"
@@ -10,14 +10,16 @@
     android:layout_height="45dp"
     android:background="@drawable/style2"
     />
+
     <ImageView
         android:id="@+id/im_pen"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/pen"
         android:background="@drawable/style1"
-        android:contentDescription="@string/image_out" />
+        android:contentDescription="@string/image_out"
+        android:scaleType="centerCrop"
+        />
+
     <ImageView
             android:id="@+id/up_picture"
             android:src="@drawable/pokemon"
@@ -30,7 +32,6 @@
             android:layout_marginStart="20dp"
             android:contentDescription="@string/image_out"
         />
-
     <TextView
         android:id="@+id/up_name"
         android:layout_width="wrap_content"
@@ -38,11 +39,9 @@
         android:layout_marginStart="130dp"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="30dp"
-        android:text="@string/myname"
         android:layout_below="@id/tv_set"
         android:textColor="#000000"
         android:textSize="35sp" />
-
     <TextView
         android:id="@+id/tv_1"
         android:layout_width="match_parent"
@@ -53,11 +52,8 @@
         android:text="@string/username"
         android:textSize="25sp"
         android:layout_below="@id/im_pen"
-        android:layout_marginTop="1dp"
         android:paddingStart="25dp"
         android:paddingEnd="1dp" />
-
-
     <TextView
         android:id="@+id/tv_2"
         android:layout_width="match_parent"
@@ -68,7 +64,7 @@
         android:paddingLeft="25dp"
         android:paddingRight="1dp"
         android:textSize="25sp"
-        android:layout_marginTop="7dp"
+
         android:paddingStart="25dp"
         android:paddingEnd="1dp" />
     <TextView
@@ -81,20 +77,14 @@
         android:paddingLeft="25dp"
         android:paddingRight="1dp"
         android:textSize="25sp"
-        android:layout_marginTop="7dp"
         android:paddingStart="25dp"
         android:paddingEnd="1dp" />
-
     <Button
         android:id="@+id/btn_login22"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/tv_3"
-        android:layout_marginTop="40dp"
-        android:text="登录"
-        android:textColor="#Fff"
-        android:textSize="20sp"/>
-
+        android:layout_height="wrap_content"
+        android:text="登入"
+        android:layout_alignParentBottom="true"/>
     <TextView
        android:id="@+id/but_out"
         android:layout_width="match_parent"
@@ -102,11 +92,10 @@
         android:layout_marginTop="200dp"
         android:text="@string/out_login"
         android:textSize="25sp"
-        android:background="@drawable/style2"
+        android:textColor="#ffffff"
+        android:background="@drawable/style3"
         android:gravity="center"
         android:layout_below="@id/tv_3"
         android:layout_centerHorizontal="true"
         />
-
-
 </RelativeLayout>
