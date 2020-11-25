@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class myhome extends AppCompatActivity {
+    public static String textbp;
     private Button mBtnmain;
     @Override
     protected void onCreate(Bundle savedInstanceState){
