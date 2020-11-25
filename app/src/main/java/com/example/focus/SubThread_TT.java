@@ -20,12 +20,13 @@ import static cn.bmob.v3.Bmob.getApplicationContext;
 public class SubThread_TT implements Runnable{
     private  final String TAG = getClass().getSimpleName();
     private String email;
-    private String password;
+    private String password,user;
     private EditText email1,password1;
 
-    SubThread_TT(String email, String password){
+    SubThread_TT(String email, String password,String user){
         this.email = email;
         this.password = password;
+        this.user=user;
     }
 
     @Override
@@ -36,7 +37,7 @@ public class SubThread_TT implements Runnable{
         StringBuffer buffer = new StringBuffer();
 
         try {
-            URL url = new URL("https://pycloud.bmob.cn/129c9e5ac930fbc2/register?password="+password+"&email="+email);
+            URL url = new URL("https://pycloud.bmob.cn/129c9e5ac930fbc2/register?password="+password+"&email="+email+"&name="+user);
             HttpURLConnection urlCon = (HttpURLConnection) url.openConnection();
 
             int response = urlCon.getResponseCode();
