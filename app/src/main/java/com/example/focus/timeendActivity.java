@@ -14,12 +14,17 @@ public class timeendActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeend);
         int  Timee=   getIntent().getIntExtra("time",0);
+        String User = getIntent().getStringExtra("name") ;
         TextView lblTitle=(TextView)findViewById(R.id.textView4);
         lblTitle.setText("本次计时持续"+Timee+"分钟");
         //update data
         Button button = (Button)findViewById(R.id.button2);
         button.setOnClickListener(v -> {
-            Intent intent = new Intent(timeendActivity.this,myhome.class);
+            Intent intent = new Intent(timeendActivity.this,UpdateActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putInt("age",Timee);
+            bundle.putString("username",User);
+            intent.putExtras(bundle);
             startActivity(intent);
         });
     }

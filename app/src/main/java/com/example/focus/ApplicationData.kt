@@ -5,7 +5,7 @@ import android.media.SoundPool
 
 class ApplicationData: Application(){
     companion object {
-        var time_minute: Long = 0L
+        var time_minute: Long = 1L
         var time_second: Long = 0L
         lateinit var soundPool: SoundPool
         var soundResId = 0
