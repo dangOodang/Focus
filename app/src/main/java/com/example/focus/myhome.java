@@ -28,11 +28,13 @@ public class myhome extends AppCompatActivity {
             Intent intent1 =new Intent(myhome.this,setname.class);
             startActivity(intent1);
         });
+
         TextView textView = findViewById(R.id.up_name);
         textView.setText(name11);
         TextView mBtv2 = findViewById(R.id.tv_2);
+
         mBtv2.setOnClickListener(v -> {
-            Intent intent12 =new Intent(myhome.this,updatepassword.class);
+            Intent intent12 =new Intent(myhome.this,ForgetActivity.class);
             startActivity(intent12);
         });
         TextView mBtv3 = findViewById(R.id.tv_3);
@@ -54,8 +56,8 @@ public class myhome extends AppCompatActivity {
 //                startActivity(intent);
 //            }
 //        });
-        TextView mBtve = findViewById(R.id.tv_1);
-        mBtv1.setOnClickListener(v -> {
+        TextView mBtve = findViewById(R.id.but_out);
+        mBtve.setOnClickListener(v -> {
             text11 = "null";
             text111 = "null";
             name11 = "null";

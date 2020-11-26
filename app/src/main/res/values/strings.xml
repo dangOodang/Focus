@@ -19,7 +19,7 @@
     <string name="update_password">修改密码</string>
     <string name="version_number">版本号</string>
     <string name="version_number_1">1.0.0.0</string>
-    <string name="out_login">退出登入</string>
+    <string name="out_login">退出登录</string>
     <string name="image_out"></string>
     <string name="please_input_newusername">请输入新昵称</string>
     <string name="please_input_nowpassword">请输入现密码</string>
