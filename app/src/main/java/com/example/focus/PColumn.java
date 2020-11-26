@@ -73,6 +73,7 @@ public class PColumn extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         maxtime =findmax();
+        maxtime = maxtime- maxtime%5+5;
         String[] y = {maxtime+"", maxtime/5*4+"", maxtime/5*3+"", maxtime/5*2+"", maxtime/5*1+"", "0"};//这个数组是高度的值
         y_title = y;
         float min_height = height / 5;
@@ -106,7 +107,7 @@ public class PColumn extends View {
             mTextPaint.setARGB(255, 153, 153, 153);
             canvas.drawText(mData.get(i).name, leftR + min_weight / 4, buttomR + 15 * mScale, mTextPaint);//下标显示
             mTextPaint.setARGB(255, 51, 51, 51);
-            canvas.drawText(mData.get(i) + "", leftR + min_weight / 4, topR - 10 * mScale, mTextPaint);//数据显示
+            canvas.drawText(mData.get(i).age + "", leftR + min_weight / 4, topR - 10 * mScale, mTextPaint);//数据显示
         }
         //右标显示
         mTextPaint.setTextSize(15 * mScale);
@@ -125,7 +126,6 @@ public class PColumn extends View {
         {
             if(max < mData.get(i).age){
                 max = mData.get(i).age;
-
             }
         }
         return max;

@@ -17,13 +17,16 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ShowActivity extends Activity {
+import java.util.ArrayList;
+import java.util.List;
 
+public class ShowActivity extends Activity {
+    public static List<Person> l2 = new ArrayList<>();
+    public List<Person> li = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show);
-
 
         com.example.focus.DBHelper helper = new com.example.focus.DBHelper(getApplicationContext(), "test.db", null, 1);
         SQLiteDatabase db = helper.getWritableDatabase();
@@ -52,8 +55,6 @@ public class ShowActivity extends Activity {
                 startActivityForResult(intent, 100);
             }
         });
-
-
     }
 
 

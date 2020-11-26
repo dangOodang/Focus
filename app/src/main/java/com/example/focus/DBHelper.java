@@ -26,17 +26,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 + "age SMALLINT)");
 
     }
-    public static List<Person> getlist(List<Person> li){
-        com.example.focus.DBHelper helper = new com.example.focus.DBHelper(getApplicationContext(), "test.db", null, 1);
-        SQLiteDatabase db = helper.getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT id as _id,name,age FROM person", null);
-        while (cursor.moveToNext()){
-            Person p = new Person(cursor.getString(cursor.getColumnIndex("name")),cursor.getInt(cursor.getColumnIndex("age")));
-            li.add(p);
-        }
-        cursor.close();
-        return li;
-    }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS person"); //删除数据表，谨慎使用

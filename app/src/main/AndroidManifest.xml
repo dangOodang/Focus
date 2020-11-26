@@ -46,6 +46,23 @@
         <activity android:name=".database"/>
         <activity android:name=".tag_activity"/>
         <activity android:name=".timeendActivity"/>
+
+        <activity android:name=".smalltag"/>
+
+        <activity android:name=".draw_activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".BaobiaoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"
             android:authorities="com.example.focus.BmobContentProvider">

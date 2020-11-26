@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_alignParentRight="true"
+    tools:context=".smalltag"
+    android:orientation="vertical"
+    android:padding="8dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:id="@+id/text1"
+        android:divider="@color/black"
+        android:text="类详情"
+        android:gravity="center"
+        android:padding="10dp"
+        android:dividerHeight="1dp"
+        ></TextView>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:divider="@drawable/line_h"
+        android:orientation="vertical"
+
+        android:stretchColumns="*">
+        <TableRow>
+        <TextView
+            android:gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:text="项目名称"
+            android:background="@drawable/textbiankuang"
+            android:textSize="30sp"></TextView>
+
+        <TextView
+            android:text="专注时长/分"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/textbiankuang"
+            android:textSize="30sp"></TextView>
+        </TableRow>
+    </TableLayout>
+    <ListView
+        android:id="@+id/listview"
+        android:padding="5dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+
+        android:cacheColorHint="#00000000"
+        android:divider="#000000"
+        android:dividerHeight="1dp"
+        android:scrollbars="horizontal"
+        android:textSize="25sp">
+    </ListView>
+    <Button
+        android:id="@+id/to_draw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:text="显示图片"
+        android:textSize="30sp"></Button>
+</LinearLayout>
