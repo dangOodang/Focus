@@ -53,17 +53,17 @@ public class SubThread_FF implements Runnable{
 
                 final JsonObject MSGobj = object;
                 String text=object.get("msg").getAsString();
-                if(text.equals("success")){
-                    Handler handler = new Handler(Looper.getMainLooper());
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(),"请查看你的邮箱",Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }else{
-                    Toast.makeText(getApplicationContext(),"邮箱不存在",Toast.LENGTH_SHORT).show();
-                }
+//                if(text.equals("success")){
+//                    Handler handler = new Handler(Looper.getMainLooper());
+//                    handler.post(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            Toast.makeText(getApplicationContext(),"请查看你的邮箱",Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//                }else{
+//                    Toast.makeText(getApplicationContext(),"邮箱不存在",Toast.LENGTH_SHORT).show();
+//                }
             } else {
                 throw new Exception("连接失败");
             }

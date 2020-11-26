@@ -59,17 +59,17 @@ public class SubThread_TT implements Runnable{
                 object = (JsonObject) parse.parse(res);//服务器返回的字典
                 final JsonObject MSGobj = object;
                 String text=object.get("msg").getAsString();
-                if(text.equals("success")){
-                    Handler handler = new Handler(Looper.getMainLooper());
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(),"请到你的邮箱内点击连接",Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }else{
-                    Toast.makeText(getApplicationContext(), "该邮箱已被注册",Toast.LENGTH_SHORT).show();
-                };
+//                if(text.equals("success")){
+//                    Handler handler = new Handler(Looper.getMainLooper());
+//                    handler.post(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            Toast.makeText(getApplicationContext(),"请到你的邮箱内点击连接",Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//                }else{
+//                    Toast.makeText(getApplicationContext(), "该邮箱已被注册",Toast.LENGTH_SHORT).show();
+//                };
             } else {
                 throw new Exception("连接失败");
             }
