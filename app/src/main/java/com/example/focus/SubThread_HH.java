@@ -57,7 +57,7 @@ public class SubThread_HH implements Runnable{
                 myhome.text11 =  object.get("objectId").getAsString();//保存下来的objectId值
                 myhome.text111 = object.get("sessionToken").getAsString();//保存下来的sessionToken值
 
-                myhome.textbp = object.get("name").getAsString();//保存昵称
+//                myhome.textbp = object.get("name").getAsString();//保存昵称
 
                 String text=object.get("msg").getAsString();
                 String text2="success";

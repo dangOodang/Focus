@@ -6,7 +6,7 @@
         android:id="@+id/but_1"
         android:layout_width="50dp"
         android:layout_height="39dp"
-        android:background="@drawable/back"
+        android:background="@drawable/back1"
         />
     <RelativeLayout
         android:id="@+id/n_1"
