@@ -56,34 +56,35 @@ public class SubThread_HH implements Runnable{
 
                 myhome.text11 =  object.get("objectId").getAsString();//保存下来的objectId值
                 myhome.text111 = object.get("sessionToken").getAsString();//保存下来的sessionToken值
-
+                myhome.name11 = object.get("name").getAsString();
 //                myhome.textbp = object.get("name").getAsString();//保存昵称
 
                 String text=object.get("msg").getAsString();
-                String text2="success";
-                if(text.equals("success")){
-                    Handler handler = new Handler(Looper.getMainLooper());
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(),"欢迎来到宠物世界",Toast.LENGTH_SHORT).show();
+//                String text2="success";
 
-
-                            //登陆成功跳转页面
-
-
-                        }
-                    });
-                }
-                if(!text.equals("success")){
-                    Handler handler = new Handler(Looper.getMainLooper());
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(),"邮箱注册失败",Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }
+//                if(text.equals("success")){
+//                    Handler handler = new Handler(Looper.getMainLooper());
+//                    handler.post(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            Toast.makeText(getApplicationContext(),"欢迎来到宠物世界",Toast.LENGTH_SHORT).show();
+//
+//
+//                            //登陆成功跳转页面
+//
+//
+//                        }
+//                    });
+//                }
+//                if(!text.equals("success")){
+//                    Handler handler = new Handler(Looper.getMainLooper());
+//                    handler.post(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            Toast.makeText(getApplicationContext(),"邮箱注册失败",Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//                }
 //                else{
 //                         Toast.makeText(getApplicationContext(), "邮箱或密码错误",Toast.LENGTH_SHORT).show();
 //                };
