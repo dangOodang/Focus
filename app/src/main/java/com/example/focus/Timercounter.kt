@@ -57,6 +57,12 @@ class Timercounter : AppCompatActivity() {
         theme1.setOnClickListener {
             startActivity<ShowActivity>()
         }
+        to_home.setOnClickListener {
+            startActivity<BaobiaoActivity>()
+        }
+        mine.setOnClickListener {
+            startActivity<myhome>()
+        }
         playStop.setOnClickListener {
             if(fuck.isEmpty() || fuck == "" || fuck == "null") {
                 Toast.makeText(applicationContext, "请选择一个标签", Toast.LENGTH_SHORT).show()
