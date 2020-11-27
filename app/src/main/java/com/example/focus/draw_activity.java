@@ -27,6 +27,7 @@ public class draw_activity extends AppCompatActivity {
 
     private void initSQLiteTwo() {
         //初始化数据
+        mData.clear();
         com.example.focus.DBHelper helper = new com.example.focus.DBHelper(getApplicationContext(), "test.db", null, 1);
         SQLiteDatabase db = helper.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT id as _id,name,age FROM person", null);

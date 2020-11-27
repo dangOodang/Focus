@@ -63,6 +63,7 @@ public class smalltag extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //跳到下一个界面
+                init();
                 Intent intent = new Intent(com.example.focus.smalltag.this,draw_activity.class);
                 startActivity(intent);
                 Toast.makeText(com.example.focus.smalltag.this,"跳转了吗", Toast.LENGTH_SHORT).show();
@@ -79,7 +80,7 @@ public class smalltag extends AppCompatActivity {
         }
         @Override
         public int getCount() {
-            return 1;
+            return mlist.size();
         }
 
         @Override

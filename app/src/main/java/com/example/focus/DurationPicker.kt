@@ -74,8 +74,8 @@ import kotlinx.android.synthetic.main.timer.view.*
             val second = numberPickerSec.getValue()
 
             tv.text = "%1$02d:%2$02d".format(minute, second)
-            ApplicationData.time_minute = minute.toLong()
-            ApplicationData.time_second = second.toLong()
+            ApplicationData.time_minute = minute
+            ApplicationData.time_second = second
             ApplicationData.isTimerCreate = true
             bt. playStop.setImageResource(
                     R.drawable.ic_play_circle_filled_black_24dp
