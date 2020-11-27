@@ -43,11 +43,11 @@ public class myhome extends AppCompatActivity {
             startActivity(intent13);
         });
 
-        Button mBtnmain = findViewById(R.id.btn_login22);//该按钮按完跳转到登录页面
-        mBtnmain.setOnClickListener(v -> {
-            Intent intent14 = new Intent(myhome.this,MainActivity.class);
-            startActivity(intent14);
-        });
+//        Button mBtnmain = findViewById(R.id.btn_login22);//该按钮按完跳转到登录页面
+//        mBtnmain.setOnClickListener(v -> {
+//            Intent intent14 = new Intent(myhome.this,MainActivity.class);
+//            startActivity(intent14);
+//        });
 //        mBtout=findViewById(R.id.but_out);
 //        mBtout.setOnClickListener(new View.OnClickListener() {
 //            @Override

@@ -36,7 +36,7 @@ public class SubThread_HH implements Runnable{
             HttpURLConnection urlCon = (HttpURLConnection) url.openConnection();
 
             int response = urlCon.getResponseCode();
-
+            EdittextActivity.lxlx = response;
             System.out.println(urlCon.getResponseCode());
             if (200 == urlCon.getResponseCode()) {
                 InputStream is = urlCon.getInputStream();
@@ -59,7 +59,7 @@ public class SubThread_HH implements Runnable{
                 myhome.name11 = object.get("name").getAsString();
 //                myhome.textbp = object.get("name").getAsString();//保存昵称
 
-                String text=object.get("msg").getAsString();
+                EdittextActivity.textlx=object.get("msg").getAsString();
 //                String text2="success";
 
 //                if(text.equals("success")){
