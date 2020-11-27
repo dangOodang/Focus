@@ -21,8 +21,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShowActivity extends Activity {
-    public static List<Person> l2 = new ArrayList<>();
+    private List<Person> mlist = new ArrayList<>();
     public List<Person> li = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,10 @@ public class ShowActivity extends Activity {
         com.example.focus.DBHelper helper = new com.example.focus.DBHelper(getApplicationContext(), "test.db", null, 1);
         SQLiteDatabase db = helper.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT id as _id,name,age FROM person", null);
-
+        while (cursor.moveToNext()) {
+            Person p = new Person(cursor.getString(cursor.getColumnIndex("name")), cursor.getInt(cursor.getColumnIndex("age")));
+            mlist.add(p);
+        }
         String[] from = {"name", "age"};
         int[] to = {R.id.txtName, R.id.txtAge};
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.listview, cursor, from, to);
@@ -39,6 +43,7 @@ public class ShowActivity extends Activity {
         //cursor.close();不能close()，否则SimpleCursorAdapter将不能从Cursor中读取数据显示
         ListView li = (ListView) findViewById(R.id.listView1);
         li.setAdapter(adapter);
+        li.setOnItemClickListener( itemClickListener);
 //        TextView tv = (TextView) findViewById(R.id.textView_rem);
 //        tv.setText("查询到" + cursor.getCount() + "条记录");
 
@@ -55,6 +60,8 @@ public class ShowActivity extends Activity {
                 startActivityForResult(intent, 100);
             }
         });
+
+
     }
 
 
@@ -84,7 +91,7 @@ public class ShowActivity extends Activity {
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {  //添加上下文菜单选中项方法
-            switch (item.getItemId()) {
+        switch (item.getItemId()) {
             case R.id.delete:
                 delete(item); //代码见后
                 return true;
@@ -100,10 +107,10 @@ public class ShowActivity extends Activity {
     public void delete(MenuItem item) {
         final AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         if (info.id > 0) {
-            new AlertDialog.Builder(this).setTitle("删除" + info.id)
+            new AlertDialog.Builder(this).setTitle("删除" + ((TextView) info.targetView.findViewById(R.id.txtName)).getText().toString())
                     .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            com.example.focus.DBHelper helper = new com.example.focus.DBHelper(getApplicationContext(), "test.db", null, 1);
+                            DBHelper helper = new DBHelper(getApplicationContext(), "test.db", null, 1);
                             SQLiteDatabase db = helper.getWritableDatabase();
                             db.execSQL("Delete from person where id = ? ", new Object[]{info.id});
                             db.close();
@@ -116,13 +123,26 @@ public class ShowActivity extends Activity {
     }
 
     public void update(MenuItem item) {
-    // do it!
+        // do it!
         final AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        Intent intent = new Intent(com.example.focus.ShowActivity.this, com.example.focus.Timercounter.class);
+        Intent intent = new Intent(ShowActivity.this, Timercounter.class);
         Bundle bundle = new Bundle();
         bundle.putString("username", ((TextView) info.targetView.findViewById(R.id.txtName)).getText().toString());
-        bundle.putInt("age", Integer.parseInt(((TextView) info.targetView.findViewById(R.id.txtAge)).getText().toString()) );
+        bundle.putInt("age", Integer.parseInt(((TextView) info.targetView.findViewById(R.id.txtAge)).getText().toString()));
         intent.putExtras(bundle);
         startActivity(intent);
     }
+
+    private AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            Intent intent = new Intent(ShowActivity.this, Timercounter.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("username", mlist.get(position).name);
+            bundle.putInt("age", mlist.get(position).age);
+            intent.putExtras(bundle);
+            startActivity(intent);
+        }
+    };
 }
